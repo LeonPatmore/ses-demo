@@ -15,7 +15,7 @@ class SesEmailService(
 ) {
     fun sendEmail(
         sender: String?,
-        recipient: String?,
+        recipient: List<String>?,
         subject: String?,
         textBody: String?,
         htmlBody: String?,
@@ -39,7 +39,8 @@ class SesEmailService(
             val request: SendEmailRequest =
                 SendEmailRequest
                     .builder()
-                    .source("sender@leonpatmore.com")
+                    .configurationSetName("my-first-configuration-set")
+                    .source(sender)
                     .destination(Destination.builder().toAddresses(recipient).build())
                     .message(message)
                     .build()

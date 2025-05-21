@@ -12,8 +12,8 @@ class SesApplicationTests {
     @Test
     fun `test email send`() {
         sesEmailService.sendEmail(
-            "leon.patmore@gmail.com",
-            "leon.patmore@gmail.com",
+            "sender@leonpatmore.com",
+            listOf("lpatmore@moneylion.com", "leon.patmore@bath.edu"),
             "TestEmail",
             "Some Text",
             "<h1>HTML Body</h1><p>With SES</p>",
